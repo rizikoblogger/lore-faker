@@ -4,6 +4,7 @@ const packageJson = require('../package.json');
 
 router.all('/', function(req, res, next) {
     return res.json([
+        '..................................................................',
         `LOREM AND FAKE DATA – Extended TOM Server v. ${packageJson.version}`,
         '..................................................................',
         'HELP: FAKE HELP - SHOW THIS FULL HELP COMMANDS STARTED BY FAKE...',
