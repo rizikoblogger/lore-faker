@@ -45,7 +45,7 @@ router.all('/', function (req, res, next) {
             return res.json([`FAKE: BIO: ${bio}`]);
         }
 
-        return res.json(['FAKE: COMMAND NOT FOUND!']);
+        return res.json(['']);
 
 
     } catch (err) {
