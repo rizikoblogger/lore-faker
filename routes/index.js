@@ -5,7 +5,7 @@ const packageJson = require('../package.json');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.send(`
-   <h3>LORE AND FAKE DATA – Extended TOM Server v. ${packageJson.version}</h3>
+   <h3>LOREM AND FAKE DATA – Extended TOM Server v. ${packageJson.version}</h3>
             <hr>
             <p>If you are a developer - or if you know someone who can do it – here you find a server to extend TOMP capabilities!</p>
             <p><strong>However</strong>, to keep 'survivors' and servers <em>relatively</em> secure, some rules about (The Oil Meridian Protocol - TOMP) should be followed:</p>
