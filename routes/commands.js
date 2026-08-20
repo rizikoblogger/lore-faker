@@ -8,16 +8,19 @@ router.all('/', function (req, res, next) {
 
     try {
 
+        // CAPTURE COMMAND
         const command = req.query.command;
-        if (!command || !command.startsWith('FAKE')) {
-            return res.json(['FAKE: NO COMMAND FOUND!']);
+        // CHECK IF BELONG TO APP (FAKE) DOMAIN - RETURNS NOTHING CASE NOT
+        if (!command || !command.toUpperCase().startsWith('FAKE')) {
+            return res.json(['']);
         }
-        const parts = command.split(' ');
-
+        // IF BELONGS TO DOMAIN, SPLIT COMMAND
+        const parts = command.toUpperCase().split(' ');
+        // CONSIDER MINIMAL COMMAND LENGTH
         if (parts.length < 2) {
             return res.json(['FAKE: ACTION COMMAND NOT FOUND!']);
         }
-
+        // IF COMMAND LENGTH IS OK, CAPTURE ACTION
         const action = parts[1];
 
         if(action.toUpperCase().startsWith('HEL')){
@@ -44,8 +47,8 @@ router.all('/', function (req, res, next) {
             const bio = faker.person.bio();
             return res.json([`FAKE: BIO: ${bio}`]);
         }
-
-        return res.json(['']);
+        // IF ACTION IS NOT FOUND, RETURN FAKE MESSAGE
+        return res.json(['FAKE: NO COMMAND FOUND!']);
 
 
     } catch (err) {
